@@ -1,0 +1,175 @@
+**FREE
+
+/if defined (infds)
+/eof
+/endif
+
+/define infds
+
+// File Information Data Structure (INFDS)
+
+// NOTE: The get attributes feedback uses the same positions in the INFDS as the input/output feedback and device specific feedback.
+
+// https://www.ibm.com/docs/en/i/7.5?topic=exceptionerrors-file-information-data-structure
+
+
+dcl-ds infds;
+  // File information feedback data structure for file feedback
+  file          char(8)    pos(1);
+  open_ind      ind        pos(9);
+  eof_ind       ind        pos(10);
+  status        zoned(5)   pos(11);
+  opcode        char(6)    pos(16);
+  routine       char(8)    pos(22);
+  list_num      char(8)    pos(30);
+  spcl_stat     zoned(5)   pos(38);
+  record        char(8)    pos(38);
+  msgid         char(7)    pos(46);
+  screen        zoned(4)   pos(67);
+  nls_in        zoned(2)   pos(71);
+  nls_out       zoned(2)   pos(73);
+  nls_mode      zoned(2)   pos(75);  
+  // File information feedback data structure for open feedback
+  odp_type      char(2)    pos(81);
+  file_name     char(10)   pos(83);
+  library       char(10)   pos(93);
+  spool_file    char(10)   pos(103);
+  spool_lib     char(10)   pos(113);
+  spool_num_old int(5)     pos(123);
+  rcd_len       int(5)     pos(125);
+  key_len       int(5)     pos(127);
+  member        char(10)   pos(129);
+  type          int(5)     pos(147);
+  rows          int(5)     pos(152);
+  columns       int(5)     pos(154);
+  num_rcds      int(10)    pos(156);
+  spool_num     int(10)    pos(160);
+  acc_type      char(2)    pos(160);
+  dup_key       char(1)    pos(162);
+  src_file      char(1)    pos(163);
+  vol_off       int(5)     pos(184);
+  blk_rcds      int(5)     pos(186);
+  overflow      int(5)     pos(188);
+  blk_incr      int(5)     pos(190);
+  flags1        char(1)    pos(196);
+  requester     char(10)   pos(197);
+  open_count    int(5)     pos(207);
+  based_mbrs    int(5)     pos(211);
+  flags2        char(1)    pos(213);
+  open_id       char(2)    pos(214);
+  rcdfmt_len    int(5)     pos(216);
+  ccsid         int(5)     pos(218);
+  flags3        char(1)    pos(220);
+  num_devs      int(5)     pos(227);
+  // File information feedback data structure for input/output feedback
+  write_cnt     uns(10)    pos(243);
+  read_cnt      uns(10)    pos(247);
+  wrtrd_cnt     uns(10)    pos(251);
+  other_cnt     int(10)    pos(255);
+  operation     char(1)    pos(260);
+  io_rcd_fmt    char(10)   pos(261);
+  dev_class     char(2)    pos(271);
+  io_pgm_dev    char(10)   pos(273);
+  io_rcd_len    int(10)    pos(283);
+  // File information feedback data structure for printer (PRTF) device feedback
+  cur_line      int(5)     pos(367);
+  cur_page      int(10)    pos(369);
+  prt_flags     char(1)    pos(373);
+  prt_major     char(2)    pos(401);
+  prt_minor     char(2)    pos(403);
+  // File information feedback data structure for display file (DSPF) device feedback
+  dsp_flag1     char(2)    pos(367);
+  dsp_aid       char(1)    pos(369);
+  cursor        char(2)    pos(370);
+  data_len      int(10)    pos(372);
+  sf_rrn        int(5)     pos(376);
+  min_rrn       int(5)     pos(378);
+  num_rcds      int(5)     pos(380);
+  act_curs      char(2)    pos(382);
+  dsp_major     char(2)    pos(401);
+  dsp_minor     char(2)    pos(403);
+  // File information feedback data structure for database (DB) device feedback
+  fdbk_size     int(10)    pos(367); 
+  join_bits     int(10)    pos(371); 
+  lock_rcds     int(5)     pos(377); 
+  pos_bits      char(1)    pos(385); 
+  dlt_bits      char(1)    pos(384); 
+  num_keys      int(5)     pos(387); 
+  key_len       int(5)     pos(393); 
+  mbr_num       int(5)     pos(395); 
+  db_rrn        int(10)    pos(397); 
+  key           char(2000) pos(401); 
+  // File information feedback data structure for IFC device feedback
+  icf_aid       char(1)    pos(369);
+  icf_len       int(10)    pos(372);
+  icf_major     char(2)    pos(401);
+  icf_minor     char(2)    pos(403);
+  sna_sense     char(8)    pos(405);
+  safe_ind      char(1)    pos(413);
+  rqswrt        char(1)    pos(415);
+  rmt_fmt       char(10)   pos(416);
+  icf_mode      char(8)    pos(430);
+  // File information feedback data structure for display file (DSPF) attributes feedback
+  pgm_dev       char(10)   pos(241);
+  dev_dsc       char(10)   pos(251);
+  user_id       char(10)   pos(261);
+  dev_class     char(1)    pos(271);
+  dev_type      char(6)    pos(272);
+  req_dev       char(1)    pos(278);
+  acq_stat      char(1)    pos(279);
+  inv_stat      char(1)    pos(280);
+  data_avail    char(1)    pos(281);
+  num_rows      int(5)     pos(282);
+  num_cols      int(5)     pos(284);
+  blink         char(1)    pos(286);
+  line_stat     char(1)    pos(287);
+  dsp_loc       char(1)    pos(288);
+  dsp_type      char(1)    pos(289);
+  kbd_type      char(1)    pos(290);
+  ctl_info      char(1)    pos(342);
+  color_dsp     char(1)    pos(343);
+  grid_dsp      char(1)    pos(344);
+  // the following fields apply to isdn.
+  isdn_len      int(5)     pos(385);
+  isdn_type     char(2)    pos(387);
+  isdn_plan     char(2)    pos(389);
+  isdn_num      char(40)   pos(391);
+  isdn_slen     int(5)     pos(435);
+  isdn_stype    char(2)    pos(437);
+  isdn_snum     char(40)   pos(439);
+  isdn_con      char(1)    pos(480);
+  isdn_rlen     int(5)     pos(481);
+  isdn_rnum     char(32)   pos(483);
+  isdn_elen     int(5)     pos(519);
+  isdn_etype    char(1)    pos(521);
+  isdn_enum     char(40)   pos(522);
+  isdn_xtype    char(1)    pos(566);
+  // File information feedback data structure for ICF attributes feedback
+  ses_stat      char(1)    pos(291);
+  sync_lvl      char(1)    pos(292);
+  conv_type     char(1)    pos(293);
+  rmt_loc       char(10)   pos(294);
+  lcl_lu        char(8)    pos(302);
+  lcl_netid     char(8)    pos(310);
+  rmt_lu        char(8)    pos(318);
+  rmt_netid     char(8)    pos(326);
+  appc_mode     char(8)    pos(334);
+  lu6_state     char(1)    pos(345);
+  lu6_cor       char(8)    pos(346);
+  // The following information is available only when program was started
+  // as result of a received program start request. (p_ stands for protected)
+  tran_pgm      char(64)   pos(567);
+  p_luwidln     char(1)    pos(631);
+  p_lunameln    char(1)    pos(632);
+  p_luname      char(17)   pos(633);
+  p_luwidin     char(6)    pos(650);
+  p_luwidseq    int(5)     pos(656);
+  // The following information is available only when a protected conversation
+  // is started on a remote system.  (u_ stands for unprotected)
+  u_luwidln     char(1)    pos(658);
+  u_lunameln    char(1)    pos(659);
+  u_luname      char(17)   pos(660);
+  u_luwidin     char(6)    pos(677);
+  u_luwidseq    int(5)     pos(683);
+end-ds;
+
