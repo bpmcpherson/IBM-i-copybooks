@@ -1,0 +1,56 @@
+**FREE
+
+/if defined (psds)
+/eof
+/endif
+
+/define psds
+
+// Program Status Data Structure
+
+// Details can be read here on the official IBM website
+// https://www.ibm.com/docs/en/i/7.5?topic=exceptionerrors-program-status-data-structure
+
+dcl-ds programStatus psds qualified;
+  procedureName     char(10);
+  statusCode        zoned(5);
+  prevStatusCode    zoned(5);
+  sourceLineNumber  char(8);
+  routineName       char(8);
+  numParams         zoned(3);
+  exceptionType     char(3);
+  exceptionNumber   char(4);
+  exception         char(7) samepos(exceptionType);
+  reserved1         char(4);
+  msgWorkArea       char(30);   
+  programLibrary    char(10);       
+  exceptionData     char(80);
+  rnx9001Exception  char(4)
+  lastFile          char(10);    
+  unused1           char(6);       
+  dateEntered       char(8);    
+  startDateCentury  zoned(2);
+  lastFileShort     char(8);     
+  lastFileStatus    char(35);  
+  jobName           char(10);      
+  jobUser           char(10);      
+  jobNumber         zoned(6);       
+  programStartDate  zoned(6);       
+  programDate       zoned(6);       
+  programTime       zoned(6);      
+  compileDate       char(6);    
+  compileTime       char(6);   
+  compilerLevel     char(4); 
+  sourceFile        char(10);      
+  sourceLibrary     char(10);       
+  sourceMember      char(10);       
+  procedureProgram  char(10);      
+  procedureModule   char(10);      
+  SrcLineNbrBin     bindec(2);
+  LastFileStsBin    bindec(2);
+  user              char(10);
+  externalErrorCode int(20);
+  intoElements      int(20);
+  internalJobId     char(16);
+  systemName        char(8);
+end-ds;
