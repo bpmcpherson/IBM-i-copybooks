@@ -1,0 +1,225 @@
+**FREE
+
+/if defined (pfield)
+/eof
+/endif
+
+/define pfield
+
+// Program-to-system fields (P-fields) can be used to emphasize field data in display files.
+// They are an alternative to using indicator controlled display attributes.
+// Indicator controlled attributes are determined at compile time, while P fields are evaluated at run-time, allowing dynamic updating of display fields.
+// To use the P-field attributes, a display file field must contain the DSPATR keyword referencing the P-field.
+
+// https://www.ibm.com/docs/en/i/7.5?topic=80-dspatr-display-attribute-keyword-display-files
+
+
+// -----------------------------------------------------------------------------
+// BLUE COLOR 
+// -----------------------------------------------------------------------------
+
+// Blue
+dcl-c COLOR_BLU X'3A';
+
+// Blue, reverse image
+dcl-c COLOR_BLU_RI X'3B';
+
+// Blue, underline
+dcl-c COLOR_BLU_UL X'3E';
+
+// Protected Blue
+dcl-c COLOR_PR_BLU X'BA';
+
+// Protected Blue, Reverse Image
+dcl-c COLOR_PR_BLU_RI X'BB';
+
+// Protected Blue, Underline
+dcl-c COLOR_PR_BLU_UL X'BE';
+
+// -----------------------------------------------------------------------------
+// GREEN COLOR 
+// -----------------------------------------------------------------------------
+
+// Green
+dcl-c COLOR_GRN X'20';
+
+// Green, reverse image
+dcl-c COLOR_GRN_RI X'21';
+
+// Green, underline
+dcl-c COLOR_GRN_UL X'24';
+
+// Green, underline, reverse image
+dcl-c COLOR_GRN_UL_RI X'25';
+
+// Protected Green
+dcl-c COLOR_PR_GRN X'A0';
+
+// Protected Green, Reverse Image
+dcl-c COLOR_PR_GRN_RI X'A1';
+
+// Protected Green, Underline
+dcl-c COLOR_PR_GRN_UL X'A4';
+
+// Protected Green, Underline, Reverse Image
+dcl-c COLOR_PR_GRN_UL_RI X'A5';
+
+
+// -----------------------------------------------------------------------------
+// PINK COLOR 
+// -----------------------------------------------------------------------------
+
+// Pink
+dcl-c COLOR_PNK X'38';
+
+// Pink, reverse image
+dcl-c COLOR_PNK_RI X'39';
+
+// Pink, underline
+dcl-c COLOR_PNK_UL X'3C';
+
+// Pink, underline, reverse image
+dcl-c COLOR_PNK_UL_RI X'3D';
+
+// Protected Pink
+dcl-c COLOR_PR_PNK X'B8';
+
+// Protected Pink, Reverse Image
+dcl-c COLOR_PR_PNK_RI  X'B9';
+
+// Protected Pink, Underline
+dcl-c COLOR_PR_PNK_UL  X'BC';
+
+// Protected Pink, Underline, Reverse Image
+dcl-c COLOR_PR_PNK_UL_RI X'BD';
+
+
+// -----------------------------------------------------------------------------
+// RED COLOR 
+// -----------------------------------------------------------------------------
+
+// Red
+dcl-c COLOR_RED X'28';
+
+// Red, reverse image
+dcl-c COLOR_RED_RI X'29';
+
+// Red, high intensity
+dcl-c COLOR_RED_HI X'2A';
+
+// Red, high intensity, reverse image
+dcl-c COLOR_RED_HI_RI X'2B';
+
+// Red, underline
+dcl-c COLOR_RED_UL X'2C';
+
+// Red, underline, reverse image
+dcl-c COLOR_RED_UL_RI X'2D';
+
+// Red, underline, blinking
+dcl-c COLOR_RED_UL_BL X'2E';
+
+// Protected Red
+dcl-c COLOR_PR_RED X'A8';
+
+// Protected Red, Underline
+dcl-c COLOR_PR_RED_UL X'AC';
+
+// Protected Red, Reverse Image
+dcl-c COLOR_PR_RED_RI X'A9';
+
+// Protected Red, High Intensity
+dcl-c COLOR_PR_RED_HI X'AA';
+
+// Protected Red, High Intensity, Reverse Image
+dcl-c COLOR_PR_RED_HI_RI X'AB';
+
+// Protected Red, Underline, Reverse Image
+dcl-c COLOR_PR_RED_UL_RI X'AD';
+
+// Protected Red, Underline, Blinking
+dcl-c COLOR_PR_RED_UL_BL X'AE';
+
+
+// -----------------------------------------------------------------------------
+// TURQUOISE COLOR
+// -----------------------------------------------------------------------------
+
+// Turquoise, column separater
+dcl-c COLOR_TRQ_CS X'30';
+
+// Turquoise, column separater, reverse image
+dcl-c COLOR_TRQ_CS_RI X'31';
+
+// Turquoise, column separater, underline
+dcl-c COLOR_TRQ_UL_CS X'34';
+
+// Turquoise, column separater, underline, reverse image
+dcl-c COLOR_TRQ_UL_RI_CS X'35';
+
+// Protected Turquoise, Column Separators
+dcl-c COLOR_PR_TRQ_CS X'B0';
+
+// Protected Turquoise, Column Separators, Reverse Image
+dcl-c COLOR_PR_TRQ_CS_RI X'B1';
+
+// Protected Turquoise, Column Separators, Underline
+dcl-c COLOR_PR_TRQ_UL_CS X'B4';
+
+// Protected Turquoise, Column Separators, Reverse Image, Underline
+dcl-c COLOR_PR_TRQ_UL_RI_CS X'B5';
+
+
+// -----------------------------------------------------------------------------
+// WHITE COLOR
+// -----------------------------------------------------------------------------
+
+// White
+dcl-c COLOR_WHT X'22';
+
+// White, reverse image
+dcl-c COLOR_WHT_RI X'23';
+
+// White, underline
+dcl-c COLOR_WHT_UL X'26';
+
+// White, reverse image, column separaters
+dcl-c COLOR_WHT_RI_CS X'33';
+
+// Protected White
+dcl-c COLOR_PR_WHT X'A2';
+
+// Protected White, Reverse Image
+dcl-c COLOR_PR_WHT_RI X'A3';
+
+// Protected White, Underline
+dcl-c COLOR_PR_WHT_UL X'A6';
+
+// Protected White, Underline, Column Separators
+dcl-c COLOR_PR_WHT_RI_CS X'B3';
+
+
+// -----------------------------------------------------------------------------
+// YELLOW COLOR 
+// -----------------------------------------------------------------------------
+
+// Yellow, column separater
+dcl-c COLOR_YLW_CS X'32';
+
+// Yellow, column separater, underline
+dcl-c COLOR_YLW_UL_CS X'36';
+
+// Protected Yellow, Column Separators
+dcl-c COLOR_PR_YLW_CS X'B2';
+
+// Protected Yellow, Column Separators, Underline
+dcl-c COLOR_PR_YLW_UL_CS X'B6';
+
+
+// -----------------------------------------------------------------------------
+// NONDISPLAY 
+// -----------------------------------------------------------------------------
+dcl-c COLOR_ND X'27';
+
+// Protected Nondisplay
+dcl-c COLOR_PR_ND X'A7';
