@@ -1,0 +1,64 @@
+**FREE
+
+/if defined (aidbytes)
+/eof
+/endif
+
+/define aidbytes
+
+// 5250 Attention Indicator (AID) definitions
+
+// Function Keys
+dcl-c KEY_F01 x'31';
+dcl-c KEY_F02 x'32';
+dcl-c KEY_F03 x'33';
+dcl-c KEY_F04 x'34';
+dcl-c KEY_F05 x'35';
+dcl-c KEY_F06 x'36';
+dcl-c KEY_F07 x'37';
+dcl-c KEY_F08 x'38';
+dcl-c KEY_F09 x'39';
+dcl-c KEY_F10 x'3A';
+dcl-c KEY_F11 x'3B';
+dcl-c KEY_F12 x'3C';
+dcl-c KEY_F13 x'B1';
+dcl-c KEY_F14 x'B2';
+dcl-c KEY_F15 x'B3';
+dcl-c KEY_F16 x'B4';
+dcl-c KEY_F17 x'B5';
+dcl-c KEY_F18 x'B6';
+dcl-c KEY_F19 x'B7';
+dcl-c KEY_F20 x'B8';
+dcl-c KEY_F21 x'B9';
+dcl-c KEY_F22 x'BA';
+dcl-c KEY_F23 x'BB';
+dcl-c KEY_F24 x'BC';
+
+// Page Down/Roll Up
+dcl-c ROLLUP x'F5';
+dcl-c KEY_PAGEDOWN x'F5';
+
+// Page Up/Roll Down
+dcl-c ROLLDOWN x'F4';
+dcl-c KEY_PAGEUP x'F4';
+
+// Enter
+dcl-c KEY_ENTER x'F1';
+dcl-c KEY_HOME x'F8';
+
+// Mouse events linked to DDS MOUBTN keyword
+dcl-c MOUSE_ME00 x'70';
+dcl-c MOUSE_ME01 x'71';
+dcl-c MOUSE_ME02 x'72';
+dcl-c MOUSE_ME03 x'73';
+dcl-c MOUSE_ME04 x'74';
+dcl-c MOUSE_ME05 x'75';
+dcl-c MOUSE_ME06 x'76';
+dcl-c MOUSE_ME07 x'77';
+dcl-c MOUSE_ME08 x'78';
+dcl-c MOUSE_ME09 x'79';
+dcl-c MOUSE_ME10 x'7A';
+dcl-c MOUSE_ME11 x'7B';
+dcl-c MOUSE_ME12 x'7C';
+dcl-c MOUSE_ME13 x'7D';
+dcl-c MOUSE_ME14 x'7E';
